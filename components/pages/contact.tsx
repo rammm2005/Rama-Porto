@@ -6,8 +6,23 @@ import { Input } from "../ui/input"
 import { Textarea } from "../ui/textarea"
 import { Button } from "../ui/button"
 import { BackgroundBeams } from "../ui/background-beams"
+import { useToast } from "@/hooks/use-toast"
 
 export function Contact() {
+    const { toast } = useToast();
+    const now = new Date();
+    const formattedDate = now.toLocaleDateString("en-US", {
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+    });
+    const formattedTime = now.toLocaleTimeString("en-US", {
+        hour: "numeric",
+        minute: "numeric",
+        hour12: true,
+    });
+
     return (
         <section id="contact" className="relative">
             <BackgroundBeams />
@@ -42,7 +57,13 @@ export function Contact() {
                                 <div className="space-y-2">
                                     <Textarea placeholder="Your Message" className="min-h-[150px]" />
                                 </div>
-                                <Button className="w-full">Send Message</Button>
+                                <Button className="w-full" onClick={() => {
+                                    toast({
+                                        variant: 'success',
+                                        title: "Email sent",
+                                        description: `Thank for Sendding message to me, your sending message on  ${formattedDate} at ${formattedTime}`,
+                                    })
+                                }}>Send Message</Button>
                             </form>
                         </CardContent>
                     </Card>
