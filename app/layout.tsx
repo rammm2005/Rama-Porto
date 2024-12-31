@@ -2,9 +2,11 @@ import type { Metadata } from "next"
 import { Inter } from 'next/font/google'
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
+// import { Navbar } from "@/components/navbar"
 import { Navbar } from "@/components/navbar"
 import Footer from "@/components/footer"
 import { Toaster } from "@/components/ui/toaster"
+import { ScrollToTop } from "@/components/scroll-to-top"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -36,6 +38,7 @@ export default function RootLayout({
           {children}
           <Toaster />
           <Footer />
+          <ScrollToTop />
         </ThemeProvider>
       </body>
     </html>

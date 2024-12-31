@@ -26,7 +26,7 @@ export default function ModeToggle() {
 
   return (
     <div className="flex flex-row gap-3 items-center">
-      <Button variant="outline" className="rounded-full font-semibold">
+      <Button variant="outline" className="hidden md:flex rounded-full font-semibold">
         <Share className="w-4 h-4 font-bold mr-2" />
         Share
       </Button>

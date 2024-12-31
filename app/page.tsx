@@ -3,6 +3,7 @@ import { Projects } from "@/components/pages/projects"
 import { Skills } from "@/components/pages/skills"
 import { Stats } from "@/components/pages/stats"
 import { Contact } from "@/components/pages/contact"
+import { MyAchievements } from "@/components/pages/achiments"
 
 export async function generateMetadata({ }) {
   const domain = process.env.DOMAIN || 'https://rama-porto.vercel.app/';
@@ -16,7 +17,7 @@ export async function generateMetadata({ }) {
       canonical: `${domain}`
     },
     verification: {
-      google: 'IPke39NX4YK4yn4RnsMtR39IbY6pHOZcN8Gnq00Z_Tg' 
+      google: 'IPke39NX4YK4yn4RnsMtR39IbY6pHOZcN8Gnq00Z_Tg'
     }
   };
 }
@@ -26,8 +27,9 @@ export default function Home() {
     <main className="pt-16">
       <Hero />
       <Stats />
-      <Projects />
+      <MyAchievements />
       <Skills />
+      <Projects />
       <Contact />
     </main>
   )
