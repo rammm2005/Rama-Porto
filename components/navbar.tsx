@@ -65,6 +65,7 @@ export function Navbar() {
                     <div className="flex items-center space-x-4">
                         <ModeToggle />
                         <Button className="hidden md:flex">Download CV</Button>
+
                     </div>
                 </div>
             </motion.header>

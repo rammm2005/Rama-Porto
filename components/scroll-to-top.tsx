@@ -26,7 +26,7 @@ export const ScrollToTop = () => {
     return (
         <button
             onClick={scrollToTop}
-            className="fixed bottom-5 right-5 p-2 rounded-full shadow-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+            className="hidden md:flex fixed bottom-5 right-5 p-2 rounded-full shadow-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
             aria-label="Scroll to top"
         >
             <svg

@@ -8,6 +8,7 @@ import { TypewriterEffectSentences } from "../ui/typewriter-effect"
 import { FlipWords } from "../ui/flip-words";
 import { Spotlight } from "../ui/spotlight";
 import { BackgroundLines } from "../ui/background-lines"
+import { FileDown } from "lucide-react"
 
 export function Hero() {
     const sentences = [
@@ -37,7 +38,7 @@ export function Hero() {
                     />
                 </div>
                 <div className="relative z-10 text-center space-y-8">
-                    <TypewriterEffectSentences sentences={sentences} />
+                    <TypewriterEffectSentences className="md:text-3xl text-3xl px-0 md:px-3 " sentences={sentences} />
                     {/* <motion.p
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -76,8 +77,12 @@ export function Hero() {
                                 View Projects
                             </span>
                         </button>
-                        <Button size="lg" variant="outline" className="rounded-full">
+                        <Button size="lg" variant="outline" className="hidden md:flex rounded-full">
                             Contact Me
+                        </Button>
+
+                        <Button size="lg" variant="outline" className="flex md:hidden rounded-full">
+                            <FileDown />Download CV
                         </Button>
                     </motion.div>
                 </div>
