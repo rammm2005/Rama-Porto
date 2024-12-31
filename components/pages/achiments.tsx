@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Trophy, Award, Star } from 'lucide-react'
+import { Trophy, Award, Star, Trash2 } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 
 interface Achievement {
@@ -78,7 +78,8 @@ export function MyAchievements() {
                     </Badge>
                 ))}
                 {selectedCategory && (
-                    <Button variant="ghost" size="sm" onClick={clearFilter}>
+                    <Button variant="destructive" size="sm" onClick={clearFilter}>
+                        <Trash2 />
                         Clear All
                     </Button>
                 )}
