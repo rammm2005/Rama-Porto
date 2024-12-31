@@ -8,7 +8,7 @@ import { TypewriterEffectSentences } from "../ui/typewriter-effect"
 import { FlipWords } from "../ui/flip-words";
 import { Spotlight } from "../ui/spotlight";
 import { BackgroundLines } from "../ui/background-lines"
-import { FileDown } from "lucide-react"
+import { FileDown, Telescope } from "lucide-react"
 
 export function Hero() {
     const sentences = [
@@ -57,7 +57,7 @@ export function Hero() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.5 }}
-                        className="text-muted-foreground text-xl max-w-2xl mx-auto px-4"
+                        className="hidden md:block text-muted-foreground text-xl max-w-2xl mx-auto px-4"
                     >
                         Transforming ideas into exceptional <FlipWords words={word} /> <br /> digital experiences.
                         Full-stack developer specializing in modern web technologies.
@@ -71,12 +71,12 @@ export function Hero() {
                         {/* <Button size="lg" className="rounded-full">
                         View Projects
                     </Button> */}
-                        <button className="relative inline-flex overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
-                            <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
-                            <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl">
-                                View Projects
-                            </span>
-                        </button>
+
+                        <Button size="lg" variant="primary" className="rounded-full">
+                            <Telescope />
+                            View Project
+                        </Button>
+
                         <Button size="lg" variant="outline" className="hidden md:flex rounded-full">
                             Contact Me
                         </Button>
