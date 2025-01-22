@@ -1,3 +1,5 @@
+"use client"
+
 import { Switch } from "@/components/ui/switch"
 import React from "react";
 import { useTheme } from "next-themes";
@@ -10,11 +12,13 @@ import {
 import { Share } from 'lucide-react';
 import { Button } from "./ui/button";
 import { Sun, Moon, SunSnow, MoonStar, MonitorCog } from 'lucide-react';
-
+import { useToast } from "@/hooks/use-toast";
+import { ToastAction } from "@/components/ui/toast";
 
 export default function ModeToggle() {
   const { theme, setTheme } = useTheme()
   const [isLightMode, setIsLightMode] = React.useState(theme === "light")
+  const { toast } = useToast();
 
   React.useEffect(() => {
     setIsLightMode(theme === "light")
@@ -24,9 +28,49 @@ export default function ModeToggle() {
     setTheme(checked ? "light" : "dark")
   }
 
+  const handleShareClick = () => {
+    if (navigator.share) {
+      navigator.share({
+        title: document.title,
+        url: window.location.href
+      })
+        .then(() => {
+          toast({
+            title: "Successfully shared!",
+            description: "The page was successfully shared.",
+            variant: "success",
+            action: (
+              <ToastAction altText="Undo share">Undo</ToastAction>
+            ),
+          });
+        })
+        .catch((error) => {
+          toast({
+            title: "Error sharing",
+            description: "There was an error while trying to share the page.",
+            variant: "destructive",
+            action: (
+              <ToastAction altText="Try again">Try again, Later.</ToastAction>
+            ),
+          });
+          console.error("Error sharing:", error);
+        });
+    } else {
+      toast({
+        title: "Sharing not supported",
+        description: "Your browser does not support sharing.",
+        variant: "destructive",
+        action: (
+          <ToastAction altText="Learn more">Learn more</ToastAction>
+        ),
+      });
+    }
+  }
+
   return (
     <div className="flex flex-row gap-3 items-center">
-      <Button variant="outline" className="hidden md:flex rounded-full font-semibold">
+      {/* Share Button */}
+      <Button variant="outline" className="hidden md:flex rounded-full font-semibold" onClick={handleShareClick}>
         <Share className="w-4 h-4 font-bold mr-2" />
         Share
       </Button>
@@ -40,6 +84,7 @@ export default function ModeToggle() {
         <span>{isLightMode ? "Light" : "Dark"}</span>
       </div>
 
+      {/* Theme Dropdown */}
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button variant="outline" size="icon" className="rounded-full">
@@ -66,4 +111,3 @@ export default function ModeToggle() {
     </div>
   )
 }
-

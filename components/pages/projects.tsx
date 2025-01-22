@@ -23,6 +23,7 @@ const Icon: Record<string, string> = {
     Express: "/lang/express.svg",
     PostgreSQL: "/lang/postgresql.svg",
     MongoDB: "/lang/mongodb.svg",
+    Kotlin: "/lang/kotlin.svg",
     "REST API": "/lang/api.svg",
     Mysql: "/lang/mysql.svg",
     Laravel: "/lang/laravel.svg",

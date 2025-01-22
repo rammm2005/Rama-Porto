@@ -9,8 +9,26 @@ import { FlipWords } from "../ui/flip-words";
 import { Spotlight } from "../ui/spotlight";
 import { BackgroundLines } from "../ui/background-lines"
 import { FileDown, Telescope } from "lucide-react"
+import { useEffect } from "react"
 
 export function Hero() {
+
+    useEffect(() => {
+        const handleSmoothScroll = (event: MouseEvent) => {
+            const target = event.target as HTMLAnchorElement;
+            if (target.matches("[href^='#']")) {
+                event.preventDefault();
+                const element = document.querySelector(target.getAttribute("href")!);
+                element?.scrollIntoView({ behavior: "smooth" });
+            }
+        };
+
+        document.addEventListener("click", handleSmoothScroll);
+        return () => {
+            document.removeEventListener("click", handleSmoothScroll);
+        };
+    }, []);
+
     const sentences = [
         "Hi there my name is Rama",
         "I'm a Web Developer and Software Engineer",
@@ -73,12 +91,16 @@ export function Hero() {
                     </Button> */}
 
                         <Button size="lg" variant="primary" className="rounded-full">
-                            <Telescope />
-                            View Project
+                            <a href="#projects" className="flex flex-row gap-2 items-center">
+                                <Telescope />
+                                View Project
+                            </a>
                         </Button>
 
                         <Button size="lg" variant="outline" className="hidden md:flex rounded-full">
-                            Contact Me
+                            <a href="#contact" className="flex flex-row gap-2 items-center">
+                                Contact Me
+                            </a>
                         </Button>
 
                         <Button size="lg" variant="outline" className="flex md:hidden rounded-full">

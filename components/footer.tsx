@@ -1,4 +1,4 @@
-import { Github, Twitter, Linkedin } from "lucide-react";
+import { Github, Twitter, Linkedin, Instagram, ArchiveRestore } from "lucide-react";
 
 export default function Footer() {
     const currentYear = new Date().getFullYear();
@@ -11,7 +11,7 @@ export default function Footer() {
 
             <div className="flex justify-center space-x-4">
                 <a
-                    href="https://github.com/ramadita"
+                    href="https://github.com/rammm2005"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-muted-foreground hover:text-primary transition-colors"
@@ -34,6 +34,25 @@ export default function Footer() {
                 >
                     <Linkedin className="w-5 h-5" />
                 </a>
+
+                <a
+                    href="https://www.instagram.com/ramaaaaadit/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                >
+                    <Instagram className="w-5 h-5" />
+                </a>
+
+                <a
+                    href="mailto:ditarama985@gmail.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                >
+                    <ArchiveRestore className="w-5 h-5" />
+                </a>
+
             </div>
         </footer>
     );

@@ -26,12 +26,13 @@ export default function Home() {
   return (
     <main className="pt-16">
       <Hero />
-      <Stats />
+      <div className="mt-32 md:mt-20 sm:mt-40"> 
+        <Stats />
+      </div>
       <MyAchievements />
       <Skills />
       <Projects />
       <Contact />
     </main>
-  )
+  );
 }
-

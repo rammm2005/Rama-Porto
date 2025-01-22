@@ -58,6 +58,15 @@ const achievements: Achievement[] = [
         category: "Awards",
         image: "/prestasi/sertifikat-kompeten-smk.jpg"
     },
+
+    {
+        id: 6,
+        title: "PUBG Mobile Competition Branch Coordinator",
+        description: "Coordinator of PUBG Mobile Competition in the study program.",
+        icon: "star",
+        category: "Organization",
+        image: "/organisasi/sporti-pubg.jpg"
+    },
 ]
 
 const iconComponents = {
