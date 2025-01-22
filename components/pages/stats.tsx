@@ -209,7 +209,7 @@ const stats = [
         title: "Happy Clients",
         value:'😁',
         icon: Users,
-        description: "Across different industries, including tech, healthcare, and finance.",
+        description: "Across different industries, including tech, Travel, and Eccomerse.",
         miniDescription: "A growing list of satisfied clients who trust and rely on our services.",
     },
     {
