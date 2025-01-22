@@ -8,8 +8,9 @@ import { TypewriterEffectSentences } from "../ui/typewriter-effect"
 import { FlipWords } from "../ui/flip-words";
 import { Spotlight } from "../ui/spotlight";
 import { BackgroundLines } from "../ui/background-lines"
-import { FileDown, Telescope } from "lucide-react"
+import { FileUser, LayoutPanelTop, Telescope } from "lucide-react"
 import { useEffect } from "react"
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@radix-ui/react-dropdown-menu"
 
 export function Hero() {
 
@@ -37,6 +38,14 @@ export function Hero() {
     ];
 
     const word = ["better", "awsome", "beautiful", "modern"];
+
+    const downloadFile = (filename: string) => {
+        const fileUrl = `/assets/cv/${filename}`;
+        const link = document.createElement("a");
+        link.href = fileUrl;
+        link.download = filename;
+        link.click();
+    };
 
     return (
         <BackgroundLines>
@@ -103,9 +112,21 @@ export function Hero() {
                             </a>
                         </Button>
 
-                        <Button size="lg" variant="outline" className="flex md:hidden rounded-full">
-                            <FileDown />Download CV
-                        </Button>
+                        <DropdownMenu>
+                            <DropdownMenuTrigger asChild>
+                                <Button className="rounded-md">Download CV</Button>
+                            </DropdownMenuTrigger>
+                            <DropdownMenuContent align="end">
+                                <DropdownMenuItem onClick={() => downloadFile("cv_with_design.pdf")}>
+                                    <LayoutPanelTop />
+                                    CV With Design
+                                </DropdownMenuItem>
+                                <DropdownMenuItem onClick={() => downloadFile("cv_default.pdf")}>
+                                    <FileUser />
+                                    CV Default
+                                </DropdownMenuItem>
+                            </DropdownMenuContent>
+                        </DropdownMenu>
                     </motion.div>
                 </div>
             </div >
