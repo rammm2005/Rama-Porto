@@ -193,28 +193,28 @@ export const CloseIcon = () => {
 const stats = [
     {
         title: "Projects Completed",
-        value: "50+",
+        value: "10+",
         icon: Trophy,
         description: "Successfully delivered projects with a focus on quality, timeliness, and client satisfaction.",
         miniDescription: "A growing portfolio of delivered projects across various industries.",
     },
     {
         title: "Lines of Code",
-        value: "100K+",
+        value: "1K+",
         icon: Code2,
         description: "Written with precision and a focus on maintainability and performance.",
         miniDescription: "Code quality and quantity combined with a passion for clean and efficient solutions.",
     },
     {
         title: "Happy Clients",
-        value: "30+",
+        value:'😁',
         icon: Users,
         description: "Across different industries, including tech, healthcare, and finance.",
         miniDescription: "A growing list of satisfied clients who trust and rely on our services.",
     },
     {
         title: "GitHub Stars",
-        value: "1.2K",
+        value: "31+",
         icon: Star,
         description: "Contributions to open source that have been recognized by the community.",
         miniDescription: "Appreciated by the open-source community for quality and impactful contributions.",

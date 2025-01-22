@@ -20,29 +20,44 @@ interface Achievement {
 const achievements: Achievement[] = [
     {
         id: 1,
-        title: "First Place in Hackathon",
-        description: "Won first place in a 48-hour coding challenge",
+        title: "First Place in Web Design Competion ITCC 2023",
+        description: "Won first place in 1 month of preparation to create a website themed “Freelancer” ",
         icon: "trophy",
         category: "Competition",
-        image: "/placeholder.svg?height=200&width=300"
+        image: "/prestasi/1-place-universitas-udayana.jpg"
     },
     {
         id: 2,
-        title: "Open Source Contributor",
-        description: "Contributed to 5+ popular open source projects",
-        icon: "award",
-        category: "Community",
-        image: "/placeholder.svg?height=200&width=300"
+        title: "Third Place in Web Design Competion ITCC 2022",
+        description: "Pemilihan Mahasiswa berprestasi program studi teknologin Informasi tahun 2024 ",
+        icon: "trophy",
+        category: "Competition",
+        image: "/prestasi/3-place-universitas-bali-internasional.jpg"
     },
     {
         id: 3,
-        title: "Tech Talk Speaker",
-        description: "Delivered a talk on AI in web development at a major conference",
+        title: "Second Place in Pilmapres Technology Information 2024",
+        description: "After 2 Weeks of preparation to create a website themed “Eccommers Website” ",
+        icon: "trophy",
+        category: "Competition",
+        image: "/prestasi/2-pilmapres.jpg"
+    },
+    {
+        id: 4,
+        title: "Tech Talk Speaker “Slicing Portopholio Website With React JS and TailwindCSS”",
+        description: "Live coding creating a static website with react and using simple react hooks",
         icon: "star",
         category: "Speaking",
-        image: "/placeholder.svg?height=200&width=300"
+        image: "/speaker/speaker-Workshop-Techart.png"
     },
-    // Add more achievements as needed
+    {
+        id: 5,
+        title: "Awarded the Most Competent Student in Software Engineering",
+        description: "Competent student award in senior high school by completing the exam with the best title",
+        icon: "award",
+        category: "Awards",
+        image: "/prestasi/sertifikat-kompeten-smk.jpg"
+    },
 ]
 
 const iconComponents = {

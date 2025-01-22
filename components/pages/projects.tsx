@@ -7,30 +7,97 @@ import { Button } from "../ui/button"
 import { ExternalLink, Github } from 'lucide-react'
 import Image from "next/image"
 
+const Icon: Record<string, string> = {
+    React: "/lang/react.svg",
+    "Next.js": "/lang/next-js.svg",
+    TypeScript: "/lang/typescript.svg",
+    TailwindCSS: "/lang/tailwindcss.svg",
+    "Framer Motion": "/lang/framer.svg",
+    "Date Fns": "/lang/date.svg",
+    Javascript: "/lang/javascript.svg",
+    PHP: "/lang/php.svg",
+    JQuery: "/lang/jquery.svg",
+    HTML5: "/lang/html5.svg",
+    CSS3: "/lang/css3.svg",
+    "Node.js": "/lang/node-js.svg",
+    Express: "/lang/express.svg",
+    PostgreSQL: "/lang/postgresql.svg",
+    MongoDB: "/lang/mongodb.svg",
+    "REST API": "/lang/api.svg",
+    Mysql: "/lang/mysql.svg",
+    Laravel: "/lang/laravel.svg",
+    Git: "/lang/git.svg",
+    "VS Code": "/lang/vs-code.svg",
+    Figma: "/lang/figma.svg",
+    "Simple Agile Methods": "/lang/agile.svg",
+};
+
 const projects = [
     {
-        title: "Project Management App",
-        description: "A full-stack application for managing projects and teams",
-        tags: ["React", "Node.js", "PostgreSQL", "TypeScript"],
-        image: "/placeholder.svg?height=300&width=400",
+        title: "Population Management Mobile Application",
+        description: "Population Management and Dues Collection in Bali's Traditional Villages.",
+        tags: ["Kotlin", "Laravel", "Mysql", "REST API"],
+        image: "/mobile-app/pendataan-warga.jpg",
         github: "#",
+        status: 'progress',
+        source_code: false,
+        demo_url: false,
         demo: "#",
     },
     {
-        title: "E-commerce Platform",
-        description: "Modern e-commerce solution with real-time inventory",
-        tags: ["Next.js", "Prisma", "Stripe", "TailwindCSS"],
-        image: "/placeholder.svg?height=300&width=400",
+        title: "E-commerce Platform for Semmaga Business",
+        description: "Simple Modern e-commerce solution with PHP",
+        tags: ["PHP", "Mysql", "JQuery", "TailwindCSS"],
+        image: "/web-app/semaaga.png",
         github: "#",
+        status: 'publish',
+        source_code: false,
+        demo_url: false,
         demo: "#",
     },
     {
-        title: "AI Writing Assistant",
-        description: "AI-powered writing tool for content creators",
-        tags: ["Python", "OpenAI", "FastAPI", "React"],
-        image: "/placeholder.svg?height=300&width=400",
+        title: "Static Travel websites in Indonesia",
+        description: "Travel website that provides cool and interesting features for users",
+        tags: ["React", "SWIPER JS", "Date Fns", "TailwindCSS"],
+        image: "/web-app/landingpage-tour.jpg",
         github: "#",
-        demo: "#",
+        status: 'publish',
+        source_code: true,
+        demo_url: true,
+        demo: "https://web-lomba-pnb-2.vercel.app/",
+    },
+    {
+        title: "Data Visualization from Spreadsheet",
+        description: "Data visualization from spreadsheets using Google Sheet API and Next js technology",
+        tags: ["Next.js", "Shadcn UI", "Google Sheet API", "Chart JS", "Zod"],
+        image: "/web-app/auto-visualition-data.png",
+        github: "#",
+        source_code: true,
+        demo_url: true,
+        status: 'publish',
+        demo: "https://data-visualitation-challenge.vercel.app/",
+    },
+    {
+        title: "Freelancer Static Website gets First Winner on ITCC 2023",
+        description: "Static freelancer website that supports Digital Transformation supports the creativity of the younger generation to realize Indonesia 2045",
+        tags: ["HTML5", "CSS3", "JQuery", "Animation Js"],
+        image: "/web-app/workpal-landingpage.jpg",
+        github: "#",
+        status: 'publish',
+        demo: "https://work-pal-testing-unit.vercel.app/",
+        source_code: true,
+        demo_url: true,
+    },
+    {
+        title: "Modern Eccommers Static Website get Third Winner on IDB Campus",
+        description: "This award-winning static e-commerce website supports Balinese MSMEs by leveraging HTML5, CSS3, and JavaScript to expand their market reach and boost competitiveness.",
+        tags: ["HTML5", "CSS3", "Javascript"],
+        image: "/web-app/clothink-landingpage.jpg",
+        status: 'publish',
+        github: "#",
+        source_code: true,
+        demo_url: true,
+        demo: "https://clothink-view.vercel.app/",
     },
 ]
 
@@ -70,19 +137,56 @@ export function Projects() {
                             <CardContent className="space-y-4">
                                 <div className="flex flex-wrap gap-2">
                                     {project.tags.map((tag) => (
-                                        <Badge key={tag} variant="secondary">
+                                        <Badge key={tag} variant="secondary" className="flex items-center gap-2">
+                                            {Icon[tag] && (
+                                                <Image
+                                                    src={Icon[tag]}
+                                                    alt={tag}
+                                                    width={16}
+                                                    height={16}
+                                                    className="inline-block"
+                                                />
+                                            )}
                                             {tag}
                                         </Badge>
                                     ))}
                                 </div>
                                 <div className="flex gap-2">
-                                    <Button size="sm" variant="outline" className="w-full">
-                                        <Github className="w-4 h-4 mr-2" />
-                                        Code
+                                    <Button
+                                        size="sm"
+                                        variant="outline"
+                                        className="w-full flex flex-row items-center gap-2"
+                                        disabled={!project.source_code}
+                                    >
+                                        {project.source_code ? (
+                                            <a href={project.github} target="_blank" className="flex flex-row items-center gap-2" rel="noopener noreferrer">
+                                                <Github className="w-4 h-4 mr-2" />
+                                                Code
+                                            </a>
+                                        ) : (
+                                            <>
+                                                <Github className="w-4 h-4 mr-2" />
+                                                Unavailable
+                                            </>
+                                        )}
                                     </Button>
-                                    <Button size="sm" className="w-full">
-                                        <ExternalLink className="w-4 h-4 mr-2" />
-                                        Demo
+                                    <Button
+                                        size="sm"
+                                        className="w-full flex items-center gap-2"
+                                        disabled={!project.demo_url}
+                                        variant="default"
+                                    >
+                                        {project.demo_url ? (
+                                            <a href={project.demo} target="_blank" className="flex flex-row items-center gap-2" rel="noopener noreferrer">
+                                                <ExternalLink className="w-4 h-4 mr-2" />
+                                                Demo
+                                            </a>
+                                        ) : (
+                                            <>
+                                                <ExternalLink className="w-4 h-4 mr-2" />
+                                                Unavailable
+                                            </>
+                                        )}
                                     </Button>
                                 </div>
                             </CardContent>
@@ -93,4 +197,3 @@ export function Projects() {
         </section>
     )
 }
-
