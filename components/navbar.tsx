@@ -7,6 +7,21 @@ import Link from "next/link";
 import Image from "next/image";
 import { useEffect } from "react";
 import { FloatingNavbar } from "./FloatingNav";
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuTrigger,
+} from "./ui/dropdown-menu";
+import { LayoutPanelTop, FileUser } from "lucide-react";
+
+const downloadFile = (filename: string) => {
+    const fileUrl = `/assets/cv/${filename}`;
+    const link = document.createElement("a");
+    link.href = fileUrl;
+    link.download = filename;
+    link.click();
+};
 
 export function Navbar() {
     useEffect(() => {
@@ -64,8 +79,22 @@ export function Navbar() {
 
                     <div className="flex items-center space-x-4">
                         <ModeToggle />
-                        <Button className="hidden md:flex">Download CV</Button>
 
+                        <DropdownMenu>
+                            <DropdownMenuTrigger asChild>
+                                <Button className="hidden md:flex">Download CV</Button>
+                            </DropdownMenuTrigger>
+                            <DropdownMenuContent align="end">
+                                <DropdownMenuItem onClick={() => downloadFile("cv_with_design.pdf")}>
+                                    <LayoutPanelTop />
+                                    CV With Design
+                                </DropdownMenuItem>
+                                <DropdownMenuItem onClick={() => downloadFile("cv_default.pdf")}>
+                                    <FileUser />
+                                    CV Default
+                                </DropdownMenuItem>
+                            </DropdownMenuContent>
+                        </DropdownMenu>
                     </div>
                 </div>
             </motion.header>
