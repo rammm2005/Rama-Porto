@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-    const domain = process.env.DOMAIN || 'https://rama-porto.vercel.app/';
+    const domain = process.env.DOMAIN || 'https://www.rama-dev.tech';
     return [
 
         {

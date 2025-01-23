@@ -6,7 +6,7 @@ import { Contact } from "@/components/pages/contact"
 import { MyAchievements } from "@/components/pages/achiments"
 
 export async function generateMetadata({ }) {
-  const domain = process.env.DOMAIN || 'https://rama-porto.vercel.app/';
+  const domain = process.env.DOMAIN || 'https://www.rama-dev.tech';
 
   return {
     authors: [{ name: 'I Putu Rama Dita', email: 'ditarama985@gmail.com' }],
@@ -16,9 +16,6 @@ export async function generateMetadata({ }) {
     alternates: {
       canonical: `${domain}`
     },
-    verification: {
-      google: 'IPke39NX4YK4yn4RnsMtR39IbY6pHOZcN8Gnq00Z_Tg'
-    }
   };
 }
 
