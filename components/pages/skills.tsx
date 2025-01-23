@@ -25,7 +25,7 @@ const skillIcons: Record<string, string> = {
     Git: "/lang/git.svg",
     "VS Code": "/lang/vs-code.svg",
     Figma: "/lang/figma.svg",
-    "Simple Agile Methods": "/lang/agile.svg",
+    "Agile Software Development": "/lang/agile.svg",
 };
 
 const skillCategories = [
@@ -44,7 +44,7 @@ const skillCategories = [
     {
         title: "Tools & Methods",
         description: "Professional development tools and practices",
-        skills: ["Git", "VS Code", "Figma", "Simple Agile Methods"],
+        skills: ["Git", "VS Code", "Figma", "Agile Software Development"],
         icon: Wrench,
     },
 ];

@@ -10,7 +10,12 @@ import { Spotlight } from "../ui/spotlight";
 import { BackgroundLines } from "../ui/background-lines"
 import { FileUser, LayoutPanelTop, Telescope } from "lucide-react"
 import { useEffect } from "react"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@radix-ui/react-dropdown-menu"
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 export function Hero() {
 
@@ -114,7 +119,21 @@ export function Hero() {
 
                         <DropdownMenu>
                             <DropdownMenuTrigger asChild>
-                                <Button className="rounded-md">Download CV</Button>
+                            </DropdownMenuTrigger>
+                            <DropdownMenuContent align="center">
+                                <DropdownMenuItem className="flex flex-row gap-2 items-center justify-center text-sm" onClick={() => downloadFile("cv_with_design.pdf")}>
+
+                                </DropdownMenuItem>
+                                <DropdownMenuItem className="flex flex-row gap-2 items-center justify-center text-sm" onClick={() => downloadFile("cv_default.pdf")}>
+
+                                </DropdownMenuItem>
+                            </DropdownMenuContent>
+                        </DropdownMenu>
+
+
+                        <DropdownMenu>
+                            <DropdownMenuTrigger asChild>
+                                <Button className="flex md:hidden">Download CV</Button>
                             </DropdownMenuTrigger>
                             <DropdownMenuContent align="end">
                                 <DropdownMenuItem onClick={() => downloadFile("cv_with_design.pdf")}>

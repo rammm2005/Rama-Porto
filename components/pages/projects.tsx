@@ -127,6 +127,8 @@ export function Projects() {
                                     src={project.image}
                                     alt={project.title}
                                     width={100}
+                                    priority
+                                    quality={100}
                                     height={100}
                                     className="w-full h-48 object-cover transition-transform group-hover:scale-105"
                                 />
