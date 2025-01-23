@@ -46,19 +46,10 @@ export function Stats() {
                         <motion.button
                             key={`button-${active.title}-${id}`}
                             layout
-                            initial={{
-                                opacity: 0,
-                            }}
-                            animate={{
-                                opacity: 1,
-                            }}
-                            exit={{
-                                opacity: 0,
-                                transition: {
-                                    duration: 0.05,
-                                },
-                            }}
-                            className="flex absolute top-2 right-2 lg:hidden items-center justify-center bg-white rounded-full h-6 w-6"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0, transition: { duration: 0.05 } }}
+                            className="flex absolute z-30 top-2 left-2 lg:hidden items-center justify-center bg-white rounded-full h-6 w-6"
                             onClick={() => setActive(null)}
                         >
                             <CloseIcon />
@@ -67,52 +58,43 @@ export function Stats() {
                             layoutId={`card-${active.title}-${id}`}
                             ref={ref}
                             initial={{ opacity: 0, y: 30 }}
-                            animate={{
-                                opacity: 1,
-                                y: 0,
-                                scale: 1.05,
-                            }}
-                            transition={{
-                                type: "spring",
-                                stiffness: 200,
-                                damping: 30,
-                                ease: "easeOut",
-                            }}
+                            animate={{ opacity: 1, y: 0, scale: 1.05 }}
+                            transition={{ type: "spring", stiffness: 200, damping: 30, ease: "easeOut" }}
                             exit={{ opacity: 0, scale: 0.95 }}
-                            className="w-full max-w-[500px] h-full md:h-fit md:max-h-[90%] flex flex-col bg-white dark:bg-neutral-900 sm:rounded-3xl overflow-hidden"
+                            className="w-full max-w-[500px] sm:py-1 sm:px-1 py-10 px-2 h-full md:h-fit md:max-h-[90%] flex flex-col bg-white dark:bg-neutral-900 rounded-3xl overflow-hidden"
                         >
-                            <div className="flex justify-between items-start p-4">
-                                <div>
-                                    <motion.h3
-                                        layoutId={`title-${active.title}-${id}`}
-                                        className="font-bold text-neutral-700 dark:text-neutral-200"
-                                    >
-                                        {active.title}
-                                    </motion.h3>
-                                    <motion.p
-                                        layoutId={`description-${active.description}-${id}`}
-                                        className="text-neutral-600 dark:text-neutral-400"
-                                    >
-                                        {active.description}
-                                    </motion.p>
-                                </div>
-
-                                <motion.button
-                                    layoutId={`button-${active.title}-${id}`}
-                                    className="p-3 text-sm rounded-full font-bold bg-blue-600"
+                            <div className="flex flex-col items-center p-4">
+                                <motion.div
+                                    layoutId={`icon-${active.title}-${id}`}
+                                    className="mb-4"
+                                    initial={{ scale: 1 }}
+                                    animate={{ scale: [1, 1.2, 1], rotate: [0, 360, 0] }}
                                 >
-                                    <active.icon className="w-8 h-8" />
-                                </motion.button>
+                                    <active.icon className="w-16 h-16 text-blue-600" />
+                                </motion.div>
+                                <motion.h3
+                                    layoutId={`title-${active.title}-${id}`}
+                                    className="font-bold text-2xl text-center text-neutral-700 dark:text-neutral-200 mb-2"
+                                >
+                                    {active.title}
+                                </motion.h3>
+                                <motion.p
+                                    layoutId={`description-${active.description}-${id}`}
+                                    className="text-neutral-600 text-start w-full dark:text-neutral-400"
+                                >
+                                    {active.description}
+                                </motion.p>
                             </div>
                             <div className="pt-4 relative px-4">
                                 <motion.div
                                     layout
+
                                     initial={{ opacity: 0 }}
                                     animate={{ opacity: 1 }}
                                     exit={{ opacity: 0 }}
-                                    className="text-neutral-600 text-xs md:text-sm lg:text-base h-40 md:h-fit pb-10 flex flex-col items-start gap-4 overflow-auto dark:text-neutral-400 [mask:linear-gradient(to_bottom,white,white,transparent)] [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch]"
+                                    className="text-neutral-600 text-sm md:text-sm lg:text-base h-40 md:h-fit pb-10 flex flex-col items-start gap-4 overflow-auto dark:text-neutral-400 [mask:linear-gradient(to_bottom,white,white,transparent)] [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch]"
                                 >
-                                    {active.miniDescription}
+                                    <i> {active.miniDescription}</i>
                                 </motion.div>
                             </div>
                         </motion.div>
@@ -138,10 +120,10 @@ export function Stats() {
                                 {stat.title}
                             </motion.h3>
                             <motion.p
-                                layoutId={`description-${stat.description}-${id}`}
+                                layoutId={`description-${stat.miniDescription}-${id}`}
                                 className="text-neutral-600 dark:text-neutral-400 text-sm"
                             >
-                                {stat.description}
+                                {stat.miniDescription}
                             </motion.p>
                         </div>
                         <motion.button
@@ -195,28 +177,28 @@ const stats = [
         title: "Projects Completed",
         value: "10+",
         icon: Trophy,
-        description: "Successfully delivered projects with a focus on quality, timeliness, and client satisfaction.",
+        description: "We take pride in having successfully completed over 10 projects across diverse industries. Each project was executed with an unwavering focus on quality, timeliness, and client satisfaction. Our approach involves close collaboration with stakeholders to ensure every requirement is met with precision, resulting in solutions that truly address our clients' needs. Our growing portfolio reflects a track record of overcoming unique challenges and delivering impactful outcomes. By adopting a results-driven mindset, we ensure every completed project not only meets expectations but also creates lasting value for our clients.",
         miniDescription: "A growing portfolio of delivered projects across various industries.",
     },
     {
         title: "Lines of Code",
         value: "1K+",
         icon: Code2,
-        description: "Written with precision and a focus on maintainability and performance.",
+        description: "With over 1,000 lines of code written, we emphasize precision, maintainability, and performance in every solution we develop. Each line is crafted with care to ensure it addresses present requirements while remaining adaptable to future needs. Our commitment to clean and efficient code ensures ease of maintenance and facilitates seamless scaling or enhancement. By adhering to industry best practices, we deliver robust, well-documented, and thoroughly tested solutions. This attention to detail enables us to provide software that is not only reliable but also capable of standing the test of time.",
         miniDescription: "Code quality and quantity combined with a passion for clean and efficient solutions.",
     },
     {
         title: "Happy Clients",
-        value:'😁',
+        value: '😁',
         icon: Users,
-        description: "Across different industries, including tech, Travel, and Eccomerse.",
+        description: "We’ve had the privilege of working with clients from various sectors, including technology, travel, and e-commerce. By understanding their unique challenges and delivering tailored solutions, we’ve built lasting relationships rooted in trust and satisfaction. Each happy client is a testament to our dedication to excellence. Our commitment to client satisfaction goes beyond delivering results—it encompasses a transparent working process and clear communication.By consistently exceeding expectations, we aim to ensure every client feels valued and supported throughout their journey with us.",
         miniDescription: "A growing list of satisfied clients who trust and rely on our services.",
     },
     {
         title: "GitHub Stars",
         value: "31+",
         icon: Star,
-        description: "Contributions to open source that have been recognized by the community.",
+        description: "My contributions to the open-source community have garnered recognition, earning over 31 GitHub stars. These contributions represent our dedication to creating impactful solutions that support the broader tech ecosystem. They also reflect our technical expertise and commitment to innovation. This recognition from the community serves as both an honor and a motivation to continue contributing high-quality, meaningful code. We believe that collaboration in open source is a powerful catalyst for advancing technology and fostering innovation.",
         miniDescription: "Appreciated by the open-source community for quality and impactful contributions.",
     },
 ];
