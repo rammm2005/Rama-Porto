@@ -67,6 +67,30 @@ const projects = [
         demo_url: true,
         demo: "https://web-lomba-pnb-2.vercel.app/",
     },
+
+    {
+        title: "Tictactoe Game that",
+        description: "A fun and interactive Tic-Tac-Toe game built with Javascript and Plain CSS.",
+        tags: ["Javascript", "CSS3"],
+        image: "/game/ticatactoe.png",
+        github: "#",
+        status: "publish",
+        source_code: true,
+        demo_url: true,
+        demo: "https://game-kill-the-bird.vercel.app/"
+    },
+
+    {
+        title: "Kill the Bird in the Air",
+        description: "An exciting game where players must shoot birds flying in the sky.",
+        tags: ["HTML5", "CSS3"],
+        image: "/game/kill-bird.png",
+        github: "#",
+        status: "publish",
+        source_code: true,
+        demo_url: true,
+        demo: "https://game-kill-the-bird.vercel.app/killbird.html"
+    },
     {
         title: "Data Visualization from Spreadsheet",
         description: "Data visualization from spreadsheets using Google Sheet API and Next js technology",
