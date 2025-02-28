@@ -8,13 +8,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             url: domain,
             lastModified: new Date(),
         },
-        {
-            url: `${domain}/detail-projects/{projectSlug}`,
-            lastModified: new Date(),
-        },
-        {
-            url: `${domain}/about`,
-            lastModified: new Date(),
-        }
     ];
 }
