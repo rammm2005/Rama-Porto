@@ -42,8 +42,15 @@ const Icon: Record<string, string> = {
     Git: "/lang/git.svg",
     "VS Code": "/lang/vs-code.svg",
     Figma: "/lang/figma.svg",
-    "SWIPER JS": "/lang/swiper.svg",
+    "Simple Agile Methods": "/lang/agile.svg",
+    "SWIPER JS": "/lang/swiper.png",
+    "Google Sheet API": "/lang/spreadsheet.svg",
+    "Chart JS": "/lang/chart-js.svg",
+    Zod: "/lang/zod.svg",
+    "Shadcn UI": "/lang/shadcn-ui.png",
+    "Animation Js": "/lang/d2bPk.gif",
 }
+
 
 interface Props {
     project: Project
