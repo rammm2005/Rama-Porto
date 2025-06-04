@@ -1,11 +1,12 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../ui/card"
-import { Badge } from "../ui/badge"
-import { Button } from "../ui/button"
-import { ExternalLink, Github } from 'lucide-react'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
+import { ExternalLink, Github } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 
 const Icon: Record<string, string> = {
     React: "/lang/react.svg",
@@ -31,7 +32,14 @@ const Icon: Record<string, string> = {
     "VS Code": "/lang/vs-code.svg",
     Figma: "/lang/figma.svg",
     "Simple Agile Methods": "/lang/agile.svg",
-};
+    "SWIPER JS": "/lang/swiper.png",
+    "Google Sheet API": "/lang/spreadsheet.svg",
+    "Chart JS": "/lang/chart-js.svg",
+    Zod: "/lang/zod.svg",
+    "Shadcn UI": "/lang/shadcn-ui.png",
+    "Animation Js": "/lang/d2bPk.gif",
+}
+
 
 const projects = [
     {
@@ -43,6 +51,7 @@ const projects = [
         status: 'progress',
         source_code: false,
         demo_url: false,
+        category: "Game Development",
         demo: "#",
     },
     {
@@ -54,6 +63,7 @@ const projects = [
         status: 'publish',
         source_code: false,
         demo_url: false,
+        category: "Web Development",
         demo: "#",
     },
     {
@@ -65,6 +75,7 @@ const projects = [
         status: 'publish',
         source_code: true,
         demo_url: true,
+        category: "Web Development",
         demo: "https://web-lomba-pnb-2.vercel.app/",
     },
 
@@ -77,6 +88,7 @@ const projects = [
         status: "publish",
         source_code: true,
         demo_url: true,
+        category: "Game Development",
         demo: "https://game-kill-the-bird.vercel.app/"
     },
 
@@ -89,6 +101,7 @@ const projects = [
         status: "publish",
         source_code: true,
         demo_url: true,
+        category: "Game Development",
         demo: "https://game-kill-the-bird.vercel.app/killbird.html"
     },
     {
@@ -112,6 +125,7 @@ const projects = [
         demo: "https://work-pal-testing-unit.vercel.app/",
         source_code: true,
         demo_url: true,
+        category: "Web Development",
     },
     {
         title: "Modern Eccommers Static Website get Third Winner on IDB Campus",
@@ -122,6 +136,7 @@ const projects = [
         github: "#",
         source_code: true,
         demo_url: true,
+        category: "Web Development",
         demo: "https://clothink-view.vercel.app/",
     },
 ]
@@ -132,8 +147,7 @@ export function Projects() {
             <div className="text-center space-y-4">
                 <h2 className="text-3xl font-bold">Featured Projects</h2>
                 <p className="text-muted-foreground max-w-2xl mx-auto">
-                    Discover some of my best work. Each project represents unique challenges
-                    and innovative solutions.
+                    Discover some of my best work. Each project represents unique challenges and innovative solutions.
                 </p>
             </div>
 
@@ -145,79 +159,114 @@ export function Projects() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: index * 0.2 }}
                     >
-                        <Card className="overflow-hidden group">
-                            <div className="relative overflow-hidden">
-                                <Image
-                                    src={project.image}
-                                    alt={project.title}
-                                    width={100}
-                                    priority
-                                    quality={100}
-                                    height={100}
-                                    className="w-full h-48 object-cover transition-transform group-hover:scale-105"
-                                />
-                            </div>
-                            <CardHeader>
-                                <CardTitle>{project.title}</CardTitle>
-                                <CardDescription>{project.description}</CardDescription>
-                            </CardHeader>
-                            <CardContent className="space-y-4">
-                                <div className="flex flex-wrap gap-2">
-                                    {project.tags.map((tag) => (
-                                        <Badge key={tag} variant="secondary" className="flex items-center gap-2">
-                                            {Icon[tag] && (
-                                                <Image
-                                                    src={Icon[tag]}
-                                                    alt={tag}
-                                                    width={16}
-                                                    height={16}
-                                                    className="inline-block"
-                                                />
-                                            )}
-                                            {tag}
+                        <Link href={`/projects/${project.title.toLowerCase().replace(/\s+/g, "-")}`}>
+                            <Card className="overflow-hidden group hover:shadow-xl transition-all duration-300 h-full flex flex-col">
+                                {/* Image Container with Fixed Aspect Ratio */}
+                                <div className="relative overflow-hidden aspect-video bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-900">
+                                    <Image
+                                        src={project.image || "/placeholder.svg"}
+                                        alt={project.title}
+                                        fill
+                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                        className="object-cover transition-transform duration-300 group-hover:scale-105"
+                                        quality={95}
+                                        priority={index < 3} // Prioritize first 3 images
+                                    />
+                                    {/* Overlay with category badge */}
+                                    <div className="absolute top-4 left-4">
+                                        <Badge variant="secondary" className="bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm">
+                                            {project.category}
                                         </Badge>
-                                    ))}
+                                    </div>
+                                    {/* Status badge */}
+                                    <div className="absolute top-4 right-4">
+                                        <Badge
+                                            className={
+                                                project.status === "publish"
+                                                    ? "bg-green-500/90 hover:bg-green-500 text-white"
+                                                    : "bg-blue-500/90 hover:bg-blue-500 text-white"
+                                            }
+                                        >
+                                            {project.status === "publish" ? "Completed" : "In Progress"}
+                                        </Badge>
+                                    </div>
+                                    {/* Gradient overlay for better text readability */}
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                                 </div>
-                                <div className="flex gap-2">
-                                    <Button
-                                        size="sm"
-                                        variant="outline"
-                                        className="w-full flex flex-row items-center gap-2"
-                                        disabled={!project.source_code}
-                                    >
-                                        {project.source_code ? (
-                                            <a href={project.github} target="_blank" className="flex flex-row items-center gap-2" rel="noopener noreferrer">
-                                                <Github className="w-4 h-4 mr-2" />
-                                                Code
-                                            </a>
-                                        ) : (
-                                            <>
-                                                <Github className="w-4 h-4 mr-2" />
-                                                Unavailable
-                                            </>
-                                        )}
-                                    </Button>
-                                    <Button
-                                        size="sm"
-                                        className="w-full flex items-center gap-2"
-                                        disabled={!project.demo_url}
-                                        variant="default"
-                                    >
-                                        {project.demo_url ? (
-                                            <a href={project.demo} target="_blank" className="flex flex-row items-center gap-2" rel="noopener noreferrer">
-                                                <ExternalLink className="w-4 h-4 mr-2" />
-                                                Demo
-                                            </a>
-                                        ) : (
-                                            <>
-                                                <ExternalLink className="w-4 h-4 mr-2" />
-                                                Unavailable
-                                            </>
-                                        )}
-                                    </Button>
+
+                                {/* Content Container */}
+                                <div className="flex flex-col flex-grow">
+                                    <CardHeader className="flex-grow">
+                                        <CardTitle className="line-clamp-2 group-hover:text-blue-600 transition-colors duration-300">
+                                            {project.title}
+                                        </CardTitle>
+                                        <CardDescription className="line-clamp-3">{project.description}</CardDescription>
+                                    </CardHeader>
+
+                                    <CardContent className="space-y-4 pt-0">
+                                        {/* Tech Stack Tags */}
+                                        <div className="flex flex-wrap gap-2">
+                                            {project.tags.slice(0, 4).map((tag) => (
+                                                <Badge
+                                                    key={tag}
+                                                    variant="outline"
+                                                    className="flex items-center gap-1.5 text-xs hover:bg-blue-50 dark:hover:bg-blue-950/20 transition-colors"
+                                                >
+                                                    {Icon[tag] && (
+                                                        <Image
+                                                            src={Icon[tag] || "/placeholder.svg"}
+                                                            alt={tag}
+                                                            width={14}
+                                                            height={14}
+                                                            className="inline-block"
+                                                        />
+                                                    )}
+                                                    {tag}
+                                                </Badge>
+                                            ))}
+                                            {project.tags.length > 4 && (
+                                                <Badge variant="outline" className="text-xs">
+                                                    +{project.tags.length - 4} more
+                                                </Badge>
+                                            )}
+                                        </div>
+
+                                        {/* Action Buttons */}
+                                        <div className="flex gap-2 pt-2">
+                                            <Button
+                                                size="sm"
+                                                variant="outline"
+                                                className="flex-1 h-9"
+                                                disabled={!project.source_code}
+                                                onClick={(e) => {
+                                                    if (project.source_code) {
+                                                        e.preventDefault()
+                                                        window.open(project.github, "_blank")
+                                                    }
+                                                }}
+                                            >
+                                                <Github className="w-4 h-4 mr-1.5" />
+                                                {project.source_code ? "Code" : "Private"}
+                                            </Button>
+                                            <Button
+                                                size="sm"
+                                                className="flex-1 h-9"
+                                                disabled={!project.demo_url}
+                                                onClick={(e) => {
+                                                    if (project.demo_url) {
+                                                        e.preventDefault()
+                                                        window.open(project.demo, "_blank")
+                                                    }
+                                                }}
+                                            >
+                                                <ExternalLink className="w-4 h-4 mr-1.5" />
+                                                {project.demo_url ? "Demo" : "Soon"}
+                                            </Button>
+                                        </div>
+                                    </CardContent>
                                 </div>
-                            </CardContent>
-                        </Card>
+                            </Card>
+                        </Link>
                     </motion.div>
                 ))}
             </div>

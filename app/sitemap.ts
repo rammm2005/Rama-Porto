@@ -8,5 +8,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             url: domain,
             lastModified: new Date(),
         },
+        {
+            url: `${domain}/projects/{slug}`,
+            lastModified: new Date(),
+        },
     ];
 }
