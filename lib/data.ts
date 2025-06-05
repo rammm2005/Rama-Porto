@@ -153,7 +153,7 @@ export const projects: Project[] = [
         longDescription: "A clean and modern e-commerce landing page built to support Balinese MSMEs, optimized for performance and visual appeal.",
         tags: ["HTML5", "CSS3", "Javascript"],
         image: "/web-app/clothink-landingpage.jpg",
-        images: ["/web-app/clothink-landingpage.jpg"],
+        images: ["/web-app/clothink-landingpage.jpg", "/web-app/clothink-about.png", "/web-app/clothink-shop.png", "/web-app/cart-ccheckout.png", "/web-app/clothink-detail.png"],
         github: "#",
         demo: "https://clothink-view.vercel.app/",
         status: "publish",
