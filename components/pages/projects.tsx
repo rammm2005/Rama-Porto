@@ -48,7 +48,7 @@ const projects = [
         tags: ["Kotlin", "Laravel", "Mysql", "REST API"],
         image: "/mobile-app/pendataan-warga.jpg",
         github: "#",
-        status: 'progress',
+        status: 'done',
         source_code: false,
         demo_url: false,
         category: "Game Development",
