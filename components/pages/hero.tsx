@@ -85,7 +85,7 @@ export function Hero() {
                         </div>
                     </div>
                 </motion.p> */}
-                    <motion.p
+                    <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.5 }}
@@ -93,7 +93,8 @@ export function Hero() {
                     >
                         Transforming ideas into exceptional <FlipWords words={word} /> <br /> digital experiences.
                         Full-stack developer specializing in modern web technologies.
-                    </motion.p>
+                    </motion.div>
+
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}

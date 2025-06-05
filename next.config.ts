@@ -14,6 +14,7 @@ const nextConfig: NextConfig = {
   basePath: '',
   assetPrefix: '',
   trailingSlash: true,
+  productionBrowserSourceMaps: true,
 };
 
 export default nextConfig;
