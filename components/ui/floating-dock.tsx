@@ -75,6 +75,7 @@ const FloatingDockMobile = ({
                 <Link
                   href={item.href}
                   key={item.title}
+                  aria-label="Navigation"
                   className="h-10 w-10 rounded-full bg-gray-50 dark:bg-neutral-900 flex items-center justify-center"
                 >
                   <div className="h-4 w-4">{item.icon}</div>

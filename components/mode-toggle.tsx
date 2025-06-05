@@ -70,7 +70,7 @@ export default function ModeToggle() {
   return (
     <div className="flex flex-row gap-3 items-center">
       {/* Share Button */}
-      <Button variant="outline" className="hidden md:flex rounded-full font-semibold" onClick={handleShareClick}>
+      <Button variant="outline" className="hidden md:flex rounded-full font-semibold" aria-label="Share to other" onClick={handleShareClick}>
         <Share className="w-4 h-4 font-bold mr-2" />
         Share
       </Button>
@@ -87,7 +87,7 @@ export default function ModeToggle() {
       {/* Theme Dropdown */}
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <Button variant="outline" size="icon" className="rounded-full">
+          <Button variant="outline" size="icon" aria-label="Turn On the Toogle by Click it" className="rounded-full">
             <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
             <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
             <span className="sr-only">Toggle theme</span>

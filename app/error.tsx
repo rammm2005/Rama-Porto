@@ -187,13 +187,13 @@ export default function ErrorPage({
                             </Button>
                         )}
                         <Button variant="outline" size="lg" asChild className="group">
-                            <Link href="/">
+                            <Link aria-label="Navigation" href="/">
                                 <Home className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
                                 Back to Home
                             </Link>
                         </Button>
                         <Button variant="outline" size="lg" asChild className="group">
-                            <Link href="/#contact">
+                            <Link aria-label="Navigation" href="/#contact">
                                 <Mail className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
                                 Contact Support
                             </Link>
@@ -318,13 +318,13 @@ export default function ErrorPage({
 
                                 <div className="flex flex-wrap justify-center gap-4">
                                     <Button asChild className="group">
-                                        <Link href="/#contact">
+                                        <Link aria-label="Navigation" href="/#contact">
                                             <Mail className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
                                             Contact Support
                                         </Link>
                                     </Button>
                                     <Button variant="outline" asChild className="group">
-                                        <Link href="#" target="_blank">
+                                        <Link aria-label="Navigation" href="#" target="_blank">
                                             <Github className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
                                             Report Issue
                                         </Link>
@@ -345,7 +345,7 @@ export default function ErrorPage({
                         }`}
                 >
                     <Button variant="ghost" asChild className="group">
-                        <Link href="javascript:history.back()">
+                        <Link aria-label="Navigation" href="javascript:history.back()">
                             <ArrowLeft className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" />
                             Go Back
                         </Link>

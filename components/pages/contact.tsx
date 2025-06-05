@@ -132,6 +132,9 @@ export function Contact() {
                                         </div>
                                     </TabsContent>
 
+                                    <label htmlFor="markdown-editor" className="sr-only">
+                                        Message
+                                    </label>
                                     <TabsContent
                                         value="preview"
                                         className="border rounded-md p-4 min-h-[200px] overflow-y-auto prose dark:prose-invert"
@@ -146,7 +149,6 @@ export function Contact() {
                                     </TabsContent>
                                 </Tabs>
 
-                                {/* submit */}
                                 <Button type="submit" className="w-full" disabled={loading}>
                                     {loading ? "Sending..." : "Send Message"}
                                 </Button>
