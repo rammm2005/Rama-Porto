@@ -161,7 +161,6 @@ export function Projects() {
                     >
                         <Link href={`/projects/${project.title.toLowerCase().replace(/\s+/g, "-")}`}>
                             <Card className="overflow-hidden group hover:shadow-xl transition-all duration-300 h-full flex flex-col">
-                                {/* Image Container with Fixed Aspect Ratio */}
                                 <div className="relative overflow-hidden aspect-video bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-900">
                                     <Image
                                         src={project.image || "/placeholder.svg"}
@@ -170,7 +169,6 @@ export function Projects() {
                                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                         className="object-cover transition-transform duration-300 group-hover:scale-105"
                                         quality={95}
-                                        priority={index < 3} // Prioritize first 3 images
                                     />
                                     {/* Overlay with category badge */}
                                     <div className="absolute top-4 left-4">
