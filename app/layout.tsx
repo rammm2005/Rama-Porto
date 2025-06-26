@@ -19,6 +19,9 @@ export const metadata: Metadata = {
     shortcut: "/ico/origami.ico",
     apple: "/ico/origami.ico",
   },
+  alternates: {
+    canonical: "https://rama-dev.tech/",
+  },
 };
 
 export default function RootLayout({
