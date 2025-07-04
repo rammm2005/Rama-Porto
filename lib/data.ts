@@ -262,6 +262,59 @@ export const projects: Project[] = [
         },
         outcomes: ["Improved JS skills", "Reached 100+ players in demo"]
     },
+
+    {
+        "slug": "modern-daily-me-tracking-app-for-young-people-to-keep-a-healthy-life",
+        "title": "Modern Daily Me Tracking App for Young people to keep a healthy life",
+        "description": "A modern daily life & habit tracking app for young people built with Kotlin and a Node.js REST API.",
+        "longDescription": "Daily Me is a mobile app designed for young people to build and maintain healthy habits, track their mood, productivity, and daily activities. It features a clean Material Design interface built with Kotlin, powered by a Node.js + Express REST API and MongoDB database. Data syncs in realtime to keep your progress up-to-date. Additionally, the app comes with an integrated chatbot that provides personalized health tips, daily motivation, and answers common wellness questions to support users in their healthy lifestyle journey.",
+        "tags": ["Kotlin", "Material Design", "Retrofit", "Node.js", "Express", "MongoDB"],
+        "image": "/mobile-app/daily-me-cover.png",
+        "images": [
+            "/mobile-app/Bootom-Home-page.png",
+            "/mobile-app/Chatbot-page.png",
+            "/mobile-app/edit-schedule.png",
+            "/mobile-app/FAQ.png",
+            "/mobile-app/Favorite.png",
+            "/mobile-app/Profile.png",
+            "/mobile-app/Workout-detail.png",
+        ],
+        "github": "#",
+        "demo": "#",
+        "status": "publish",
+        "sourceCode": true,
+        "demoUrl": false,
+        "category": "Mobile Development",
+        "client": "Personal Project",
+        "duration": "3 weeks",
+        "teamSize": "1 person",
+        "role": "Fullstack Developer",
+        "challenges": [
+            "Designing flexible REST API for multiple trackers",
+            "State management & offline caching in Kotlin"
+        ],
+        "solutions": [
+            "Structured MongoDB schema for habits, moods, and progress logs",
+            "Used Retrofit with coroutines for clean async API calls"
+        ],
+        "features": [
+            "Track daily habits, mood, productivity",
+            "Realtime data sync",
+            "Progress visualization",
+            "Clean Material Design UI"
+        ],
+        "techDetails": {
+            "frontend": ["Kotlin", "Material Design", "Retrofit"],
+            "backend": ["Node.js", "Express"],
+            "database": ["MongoDB"],
+            "tools": ["Android Studio", "Postman", "Figma"]
+        },
+        "outcomes": [
+            "Improved user awareness of daily habits",
+            "Lightweight & scalable backend",
+            "Engaging & responsive mobile experience"
+        ]
+    }
 ]
 
 export function getProjectBySlug(slug: string): Project | undefined {
