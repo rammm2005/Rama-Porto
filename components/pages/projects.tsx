@@ -147,11 +147,11 @@ const projects = [
         tags: ["MongoDB", "Kotlin", "Retrovit", "MaterialDesign"],
         image: "/mobile-app/Bold Sale Brand Website Homepage Banner.png",
         status: 'publish',
-        github: "#",
+        github: "https://github.com/rammm2005/daily_life_tracking_app",
         source_code: true,
         demo_url: true,
         category: "Mobile App",
-        demo: "https://clothink-view.vercel.app/",
+        demo: "#",
     },
 ]
 

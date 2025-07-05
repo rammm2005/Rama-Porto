@@ -279,7 +279,7 @@ export const projects: Project[] = [
             "/mobile-app/Profile.png",
             "/mobile-app/Workout-detail.png",
         ],
-        "github": "#",
+        "github": "https://github.com/rammm2005/daily_life_tracking_app",
         "demo": "#",
         "status": "publish",
         "sourceCode": true,

@@ -66,7 +66,7 @@ export default function ProjectDetailPage({ project }: Props) {
         setIsVisible(true)
     }, [])
 
-    console.log('image', project.images)
+    // console.log('image', project.images)
 
     const getStatusColor = (status: string) => {
         switch (status) {
