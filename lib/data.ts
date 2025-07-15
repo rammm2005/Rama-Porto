@@ -60,6 +60,61 @@ export const projects: Project[] = [
         outcomes: ["Supported local commerce", "Easy-to-use admin panel"]
     },
     {
+        "slug": "portfolio-website-templates",
+        "title": "Portfolio Website for Designer",
+        "description": "A modern, responsive portfolio website for designers to showcase their work and skills, built with React and TailwindCSS.",
+        "longDescription": "A personal portfolio website template designed for creative designers to professionally present their projects, skills, and contact information. Featuring a clean, responsive UI, interactive sections, and reusable components built with React, styled with TailwindCSS, and enhanced with SwiperJS for interactive carousels.",
+        "tags": ["React", "TailwindCSS", "SWIPER JS", "Date Fns"],
+        "image": "/web-app/landingpage-designer.jpg",
+        "images": [
+            "/web-app/porto-designer.png",
+            "/web-app/port-about-me.png",
+            "/web-app/porto-sevice.png",
+            "/web-app/porto-myproject.png",
+            "/web-app/port-testimonial.png",
+            "/web-app/porto-blog.png",
+            "/web-app/porto-contact-me.png",
+        ],
+        "github": "https://github.com/rammm2005/Travel-Ina",
+        "demo": "https://web-lomba-pnb-2.vercel.app/",
+        "status": "publish",
+        "sourceCode": true,
+        "demoUrl": true,
+        "category": "Web Development",
+        "client": "Personal Project",
+        "duration": "1 week",
+        "teamSize": "1 person",
+        "role": "Frontend Engineer",
+        "challenges": [
+            "Designing a flexible layout to fit diverse content",
+            "Ensuring cross-device and cross-browser responsiveness",
+            "Keeping performance high despite image-heavy content"
+        ],
+        "solutions": [
+            "Leveraged TailwindCSS grid & flex utilities",
+            "Tested and fine-tuned breakpoints for responsiveness",
+            "Optimized images & lazy-loaded heavy content"
+        ],
+        "features": [
+            "Responsive, mobile-first layout",
+            "Designer-friendly showcase sections",
+            "Interactive SwiperJS-powered sliders for portfolio pieces",
+            "Contact form with validation",
+            "Clean, reusable React components"
+        ],
+        "techDetails": {
+            "frontend": ["React 18+", "TailwindCSS", "SwiperJS", "Date-fns"],
+            "backend": [],
+            "database": [],
+            "tools": ["VS Code", "Figma"],
+        },
+        "outcomes": [
+            "A professional portfolio site template for designers",
+            "Improved personal brand presentation",
+            "Codebase ready for extension into CMS-backed version"
+        ]
+    },
+    {
         slug: "tictactoe-game-that",
         title: "Tictactoe Game",
         description: "A fun and interactive Tic-Tac-Toe game built with Javascript and Plain CSS.",
@@ -96,7 +151,7 @@ export const projects: Project[] = [
         tags: ["Next.js", "Shadcn UI", "Google Sheet API", "Chart JS", "Zod"],
         image: "/web-app/auto-visualition-data.png",
         images: ["/web-app/auto-visualition-data.png", "/web-app/Data-Visualization-Platform.png", "/web-app/data-visual-create-url.png", "/web-app/data-visual-visual.png", "/web-app/datavisual-data.png"],
-        github: "#",
+        github: "https://github.com/rammm2005/Data-Visualitation-Challenge",
         demo: "https://data-visualitation-challenge.vercel.app/",
         status: "publish",
         sourceCode: true,
@@ -125,7 +180,7 @@ export const projects: Project[] = [
         tags: ["HTML5", "CSS3", "JQuery", "Animation Js"],
         image: "/web-app/workpal-landingpage.jpg",
         images: ["/web-app/workpal-landingpage.jpg"],
-        github: "#",
+        github: "https://github.com/rammm2005/WorkPal-Testing-Unit",
         demo: "https://work-pal-testing-unit.vercel.app/",
         status: "publish",
         sourceCode: true,
@@ -212,7 +267,7 @@ export const projects: Project[] = [
         tags: ["React", "SWIPER JS", "Date Fns", "TailwindCSS"],
         image: "/web-app/landingpage-tour.jpg",
         images: ["/web-app/landingpage-tour.jpg"],
-        github: "#",
+        github: "https://github.com/rammm2005/Travel-Ina",
         demo: "https://web-lomba-pnb-2.vercel.app/",
         status: "publish",
         sourceCode: true,
@@ -314,7 +369,57 @@ export const projects: Project[] = [
             "Lightweight & scalable backend",
             "Engaging & responsive mobile experience"
         ]
+    },
+    {
+        "slug": "3des-encryption-decryption-algorithm-with-python-and-telegram-bot",
+        "title": "3DES Encryption & Decryption with Python and Telegram Bot",
+        "description": "A secure message encryption & decryption tool using Triple DES (3DES) algorithm implemented in Python and integrated with a Telegram bot.",
+        "longDescription": "This project is a secure and interactive encryption-decryption tool that leverages the Triple DES (3DES) algorithm to protect sensitive text data. Users can interact with the system directly via Telegram, encrypting or decrypting messages on demand. The solution is built with Python using the PyCryptodome library for cryptography, and integrated into Telegram Bot API for real-time messaging. It demonstrates secure coding practices, stateless design, and a lightweight, scalable architecture for personal or educational use in cryptography and secure communication.",
+        "tags": ["Python", "PyCryptodome", "Telegram Bot", "Encryption", "Cybersecurity", "Secure Coding"],
+        "image": "/mobile-app/3des.png",
+        "images": [
+            "/mobile-app/3des-bot-start.png",
+            "/mobile-app/3des-bot-encrypt.png",
+            "/mobile-app/3des-bot-decrypt.png"
+        ],
+        "github": "https://github.com/rammm2005/3des-encryption-telegram-bot",
+        "demo": "https://t.me/threedesc_bot",
+        "status": "publish",
+        "sourceCode": true,
+        "demoUrl": true,
+        "category": "Security Tool",
+        "client": "Personal Project",
+        "duration": "2 weeks",
+        "teamSize": "1 person",
+        "role": "Developer & Architect",
+        "challenges": [
+            "Implementing 3DES securely with proper padding and key management",
+            "Handling Telegram bot API rate limits and message security"
+        ],
+        "solutions": [
+            "Used PyCryptodome with CBC mode and PKCS5 padding for 3DES",
+            "Stateless design, avoiding sensitive data persistence",
+            "Proper exception handling & input validation to prevent misuse"
+        ],
+        "features": [
+            "Encrypt messages using 3DES via Telegram",
+            "Decrypt previously encrypted messages",
+            "User-friendly interaction through bot commands",
+            "Lightweight and secure design following SDLC principles"
+        ],
+        techDetails: {
+            frontend: ["Python"],
+            backend: ["Python", "TelegramBotAPI"],
+            database: [],
+            tools: ["VS Code"],
+        },
+        "outcomes": [
+            "Showcased secure cryptographic implementation",
+            "Demonstrated real-world use of Telegram Bot API for secure utilities",
+            "Improved awareness on secure message exchange"
+        ]
     }
+
 ]
 
 export function getProjectBySlug(slug: string): Project | undefined {

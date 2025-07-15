@@ -34,6 +34,9 @@ const Icon: Record<string, string> = {
     "VS Code": "/lang/vs-code.svg",
     Figma: "/lang/figma.svg",
     "Simple Agile Methods": "/lang/agile.svg",
+    "Python": "/lang/python-svgrepo-com.svg",
+    "TelegramBotAPI": "/lang/telegram-svgrepo-com.svg",
+    "Cybersecurity": "/lang/cybersecurity-two-tone-svgrepo-com.svg",
     "SWIPER JS": "/lang/swiper.png",
     "Google Sheet API": "/lang/spreadsheet.svg",
     "Chart JS": "/lang/chart-js.svg",
@@ -73,7 +76,7 @@ const projects = [
         description: "Travel website that provides cool and interesting features for users",
         tags: ["React", "SWIPER JS", "Date Fns", "TailwindCSS"],
         image: "/web-app/landingpage-tour.jpg",
-        github: "#",
+        github: "https://github.com/rammm2005/Travel-Ina",
         status: 'publish',
         source_code: true,
         demo_url: true,
@@ -81,6 +84,18 @@ const projects = [
         demo: "https://web-lomba-pnb-2.vercel.app/",
     },
 
+    {
+        "title": "Portfolio Website Templates",
+        "description": "Portfolio website for designers to showcase their work with modern UI, responsive design, and interactive features.",
+        "tags": ["React", "SWIPER JS", "Date Fns", "TailwindCSS"],
+        "image": "/web-app/porto-designer.png",
+        "github": "https://github.com/rammm2005/Techart",
+        "status": "publish",
+        "source_code": true,
+        "demo_url": true,
+        "category": "Web Development",
+        "demo": "https://techart.vercel.app/"
+    },
     {
         title: "Tictactoe Game that",
         description: "A fun and interactive Tic-Tac-Toe game built with Javascript and Plain CSS.",
@@ -111,7 +126,7 @@ const projects = [
         description: "Data visualization from spreadsheets using Google Sheet API and Next js technology",
         tags: ["Next.js", "Shadcn UI", "Google Sheet API", "Chart JS", "Zod"],
         image: "/web-app/auto-visualition-data.png",
-        github: "#",
+        github: "https://github.com/rammm2005/Data-Visualitation-Challenge",
         source_code: true,
         demo_url: true,
         status: 'publish',
@@ -122,7 +137,7 @@ const projects = [
         description: "Static freelancer website that supports Digital Transformation supports the creativity of the younger generation to realize Indonesia 2045",
         tags: ["HTML5", "CSS3", "JQuery", "Animation Js"],
         image: "/web-app/workpal-landingpage.jpg",
-        github: "#",
+        github: "https://github.com/rammm2005/WorkPal-Testing-Unit",
         status: 'publish',
         demo: "https://work-pal-testing-unit.vercel.app/",
         source_code: true,
@@ -153,6 +168,18 @@ const projects = [
         category: "Mobile App",
         demo: "#",
     },
+    {
+        "title": "3DES Encryption Decryption Algorithm with Python and Telegram Bot",
+        "description": "A secure Python-based implementation of the Triple DES (3DES) encryption and decryption algorithm integrated with a Telegram bot. This tool allows users to encrypt and decrypt messages directly via Telegram, demonstrating cryptographic best practices and secure communication.",
+        "tags": ["Python", "TelegramBotAPI", "Encryption", "Cybersecurity"],
+        "image": "/mobile-app/3des.png?v=1",
+        "status": "publish",
+        "github": "https://github.com/rammm2005/keamanan-informasi",
+        "source_code": true,
+        "demo_url": true,
+        "category": "Security Tool",
+        "demo": "https://t.me/threedesc_bot"
+    }
 ]
 
 export function Projects() {
@@ -190,6 +217,7 @@ export function Projects() {
                                             {project.category}
                                         </Badge>
                                     </div>
+                      
                                     {/* Status badge */}
                                     <div className="absolute top-4 right-4">
                                         <Badge

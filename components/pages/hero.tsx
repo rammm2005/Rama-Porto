@@ -16,6 +16,7 @@ import {
     DropdownMenuItem,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import Image from "next/image"
 
 export function Hero() {
 
@@ -42,7 +43,7 @@ export function Hero() {
         "Check out my projects below"
     ];
 
-    const word = ["better", "awsome", "beautiful", "modern"];
+    const word = ["better", "awesome", "beautiful", "modern"];
 
     const downloadFile = (filename: string) => {
         const fileUrl = `/assets/cv/${filename}`;
@@ -69,22 +70,27 @@ export function Hero() {
                         particleColor="#7C3AED"
                     />
                 </div>
-                <div className="relative z-10 text-center space-y-8">
-                    <TypewriterEffectSentences className="md:text-3xl text-3xl px-0 md:px-3 " sentences={sentences} />
-                    {/* <motion.p
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.5 }}
-                    className="text-xl max-w-2xl mx-auto px-4"
-                >
-                    <div className="flex justify-center items-center px-4">
-                        <div className="text-3xl font-semibold mx-auto text-neutral-800 dark:text-neutral-200">
-                            Build your
 
-                            websites with Us
-                        </div>
-                    </div>
-                </motion.p> */}
+                <div className="relative z-10 text-center space-y-8 flex flex-col items-center">
+
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ delay: 0.3, duration: 0.6 }}
+                        className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden shadow-lg ring-4 ring-emerald-100 dark:ring-[#000000]"
+                    >
+                        <Image
+                            src="/assets/profile/profile-me.jpg?v=1"
+                            alt="Rama Profile"
+                            width={100}
+                            height={100}
+                            loading="eager"
+                            className="w-full h-full object-cover"
+                        />
+                    </motion.div>
+
+                    <TypewriterEffectSentences className="md:text-3xl text-3xl px-0 md:px-3" sentences={sentences} />
+
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -101,10 +107,6 @@ export function Hero() {
                         transition={{ delay: 0.7 }}
                         className="flex flex-wrap justify-center gap-4"
                     >
-                        {/* <Button size="lg" className="rounded-full">
-                        View Projects
-                    </Button> */}
-
                         <Button size="lg" variant="primary" className="rounded-full">
                             <a href="#projects" className="flex flex-row gap-2 items-center">
                                 <Telescope />
@@ -117,20 +119,6 @@ export function Hero() {
                                 Contact Me
                             </a>
                         </Button>
-
-                        <DropdownMenu>
-                            <DropdownMenuTrigger asChild>
-                            </DropdownMenuTrigger>
-                            <DropdownMenuContent align="center">
-                                <DropdownMenuItem className="flex flex-row gap-2 items-center justify-center text-sm" onClick={() => downloadFile("cv_with_design.pdf")}>
-
-                                </DropdownMenuItem>
-                                <DropdownMenuItem className="flex flex-row gap-2 items-center justify-center text-sm" onClick={() => downloadFile("cv_default.pdf")}>
-
-                                </DropdownMenuItem>
-                            </DropdownMenuContent>
-                        </DropdownMenu>
-
 
                         <DropdownMenu>
                             <DropdownMenuTrigger asChild>
@@ -153,4 +141,3 @@ export function Hero() {
         </BackgroundLines>
     )
 }
-

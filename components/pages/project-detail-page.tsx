@@ -51,6 +51,9 @@ const Icon: Record<string, string> = {
     Zod: "/lang/zod.svg",
     "Shadcn UI": "/lang/shadcn-ui.png",
     "Animation Js": "/lang/d2bPk.gif",
+    "Python": "/lang/python-svgrepo-com.svg",
+    "TelegramBotAPI": "/lang/telegram-svgrepo-com.svg",
+    "Cybersecurity": "/lang/cybersecurity-two-tone-svgrepo-com.svg",
 }
 
 
@@ -233,7 +236,17 @@ export default function ProjectDetailPage({ project }: Props) {
                     I’d love to help bring your project ideas to life. Let’s discuss how we can work together to create something amazing.
                 </p>
                 <div className="flex flex-wrap justify-center gap-4">
-                    <Button size="lg">Start a Project</Button>
+                    <Button size="lg" onClick={
+                        () => {
+                            const msg = encodeURIComponent(
+                                `Halo, saya ingin tanya tentang proyek ${project.title}.`
+                            )
+                            window.open(
+                                `https://wa.me/6283116054105?text=${msg}`,
+                                "_blank"
+                            )
+                        }
+                    }>Start a Project</Button>
                     <Button variant="outline" size="lg" asChild>
                         <Link href="/#contact">Contact Me</Link>
                     </Button>

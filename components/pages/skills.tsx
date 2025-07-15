@@ -26,25 +26,30 @@ const skillIcons: Record<string, string> = {
     "VS Code": "/lang/vs-code.svg",
     Figma: "/lang/figma.svg",
     "Agile Software Development": "/lang/agile.svg",
+    Trello: "/lang/trello-logo-svgrepo-com.svg",
+    Java: "/lang/java-logo-svgrepo-com.svg",
+    Kotlin: "/lang/kotlin.svg",
+    Javascript: "/lang/javascript-svgrepo-com.svg",
+    "Android Studio": "/lang/logo-google-android-studio-svgrepo-com.svg",
 };
 
 const skillCategories = [
     {
         title: "Frontend Development",
         description: "Creating responsive and interactive user interfaces",
-        skills: ["React", "Next.js", "TypeScript", "TailwindCSS", "Framer Motion", "HTML5", "CSS3"],
+        skills: ["React", "Next.js", "Javascript", "TypeScript", "TailwindCSS", "Framer Motion", "HTML5", "CSS3"],
         icon: Code2,
     },
     {
         title: "Backend Development",
         description: "Building scalable server-side applications",
-        skills: ["Node.js", "Express", "PostgreSQL", "MongoDB", "REST APIs", "Mysql", "Laravel"],
+        skills: ["Node.js", "Java", "Kotlin", "Express", "PostgreSQL", "MongoDB", "REST APIs", "Mysql", "Laravel"],
         icon: Server,
     },
     {
         title: "Tools & Methods",
         description: "Professional development tools and practices",
-        skills: ["Git", "VS Code", "Figma", "Agile Software Development"],
+        skills: ["Git", "VS Code", "Android Studio", "Figma", "Agile Software Development", "Trello"],
         icon: Wrench,
     },
 ];
@@ -97,7 +102,7 @@ export function Skills() {
                                     <motion.div
                                         className="flex flex-wrap gap-2"
                                         initial={false}
-                                        animate={{ height:  "auto" }}
+                                        animate={{ height: "auto" }}
                                         transition={{ duration: 0.3 }}
                                     >
                                         {category.skills.map((skill) => (
