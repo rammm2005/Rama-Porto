@@ -67,6 +67,22 @@ const achievements: Achievement[] = [
         category: "Organization",
         image: "/organisasi/sporti-pubg.jpg"
     },
+    {
+        id: 7,
+        title: "Assistant Lecturer Basic programming algorithms",
+        description: "Mentoring more than 7 students to learn and understand basic programming algorithms and complete 5 case study modules.",
+        icon: "trophy",
+        category: "Awards",
+        image: "/experience/asdos-alprog.jpg"
+    },
+    {
+        id: 8,
+        title: "Internship Certificate PT Foxbyte Global Inovasi",
+        description: "Internship as a Fullstack developer using laravel to develop a website with a team and develop skills in teamwork.",
+        icon: "trophy",
+        category: "Awards",
+        image: "/experience/foxbyte-intern.jpg"
+    },
 ]
 
 const iconComponents = {
