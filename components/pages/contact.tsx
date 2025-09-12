@@ -163,7 +163,7 @@ export function Contact() {
                     <div className="flex justify-center space-x-6">
                         <SocialIcon href="https://www.instagram.com/ramaaaaadit/" icon={Instagram} />
                         <SocialIcon href="mailto:ditarama985@gmail.com" icon={Mail} />
-                        <SocialIcon href="https://linkedin.com/in/ramadita" icon={Linkedin} />
+                        <SocialIcon href="https://www.linkedin.com/in/rama-dita-486a6b249/" icon={Linkedin} />
                         <SocialIcon href="https://github.com/rammm2005" icon={Github} />
                     </div>
                 </div>
