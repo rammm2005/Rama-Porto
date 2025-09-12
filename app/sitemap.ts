@@ -44,7 +44,7 @@ function slugify(title: string) {
 }
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const domain = process.env.DOMAIN || "https://rama-dev.tech";
+  const domain = process.env.DOMAIN || "https://www.rama-dev.tech";
 
   return [
     {
