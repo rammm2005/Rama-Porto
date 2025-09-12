@@ -4,32 +4,104 @@ import { Skills } from "@/components/pages/skills"
 import { Stats } from "@/components/pages/stats"
 import { Contact } from "@/components/pages/contact"
 import { MyAchievements } from "@/components/pages/achiments"
+import type { Metadata } from "next"
 
-export async function generateMetadata({ }) {
-  const domain = process.env.DOMAIN || 'https://www.rama-dev.tech';
+export const generateMetadata = async (): Promise<Metadata> => {
+  const domain = process.env.DOMAIN || "https://www.rama-dev.tech";
+  const title = "Portfolio Rama Dita | Software Engineer & Web Developer";
+  const description =
+    "Portofolio resmi Rama Dita, seorang Software Engineer dan Web Developer berpengalaman. Spesialisasi dalam aplikasi web modern, desain responsif, frontend, backend, dan solusi full stack inovatif.";
 
   return {
-    authors: [{ name: 'I Putu Rama Dita', email: 'ditarama985@gmail.com' }],
-    title: 'Protofolio App - Rama Dita',
-    description: 'Portofolio resmi Rama Dita, seorang Software Engineer dan Web Developer berpengalaman. Spesialisasi dalam pengembangan aplikasi web modern, desain responsif, dan solusi berbasis teknologi yang inovatif.',
-    keywords: 'protofolio ramadita, software engineer, web developer, pengembang web, teknologi, desain responsif, aplikasi modern, frontend, backend, full stack developer',
+    metadataBase: new URL(domain),
+    authors: [{ name: "I Putu Rama Dita", url: domain }],
+    title,
+    description,
+    keywords: [
+      "Rama Dita",
+      "Portfolio Rama",
+      "Software Engineer Indonesia",
+      "Web Developer",
+      "Web 3 Developer",
+      "Blockchain Developer",
+      "AI Trainer",
+      "AI Engineer",
+      "Frontend Developer",
+      "Backend Developer",
+      "Full Stack Developer",
+      "Aplikasi Web Modern",
+      "Desain Responsif",
+    ],
     alternates: {
-      canonical: `${domain}`
+      canonical: domain,
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+      },
+    },
+    openGraph: {
+      type: "website",
+      url: domain,
+      title,
+      description,
+      siteName: "Rama Dita Portfolio",
+      images: [
+        {
+          url: `${domain}/profile/profile-me.jpg?v=2.2`,
+          width: 1200,
+          height: 630,
+          alt: "Portfolio Rama Dita",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [`${domain}/profile/profile-me.jpg?v=2.2`],
+      creator: "@RamaDit22", 
     },
   };
-}
+};
 
 export default function Home() {
   return (
     <main className="pt-16">
       <Hero />
-      <div className="mt-32 md:mt-20 sm:mt-40"> 
+      <div className="mt-32 md:mt-20 sm:mt-40">
         <Stats />
       </div>
       <MyAchievements />
       <Skills />
       <Projects />
       <Contact />
+
+      {/* JSON-LD Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            name: "I Putu Rama Dita",
+            url: "https://www.rama-dev.tech",
+            sameAs: [
+              "https://github.com/rammm2005",
+              "https://www.linkedin.com/in/rama-dita-486a6b249/",
+              "https://x.com/RamaDit22",
+            ],
+            jobTitle: "Software Engineer & Web Developer",
+            worksFor: {
+              "@type": "Organization",
+              name: "Freelance / Remote",
+            },
+          }),
+        }}
+      />
     </main>
   );
 }
