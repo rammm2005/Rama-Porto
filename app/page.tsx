@@ -20,6 +20,11 @@ export const generateMetadata = async (): Promise<Metadata> => {
     keywords: [
       "Rama Dita",
       "Portfolio Rama",
+      "Portofolio Rama",
+      "Rama",
+      "Rama Software Engineer",
+      "Rama Web Developer",
+      "Portofolio Web Rama",
       "Software Engineer Indonesia",
       "Web Developer",
       "Web 3 Developer",
@@ -63,7 +68,7 @@ export const generateMetadata = async (): Promise<Metadata> => {
       title,
       description,
       images: [`${domain}/profile/profile-me.jpg?v=2.2`],
-      creator: "@RamaDit22", 
+      creator: "@RamaDit22",
     },
   };
 };
@@ -98,6 +103,11 @@ export default function Home() {
             worksFor: {
               "@type": "Organization",
               name: "Freelance / Remote",
+            },
+            potentialAction: {
+              "@type": "SearchAction",
+              target: "https://www.rama-dev.tech/?s={search_term_string}",
+              "query-input": "required name=search_term_string",
             },
           }),
         }}
