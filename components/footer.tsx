@@ -19,7 +19,7 @@ export default function Footer() {
                     <Github className="w-5 h-5" />
                 </a>
                 <a
-                    href="https://twitter.com/ramadita"
+                    href="https://x.com/RamaDit22"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-muted-foreground hover:text-primary transition-colors"
@@ -27,7 +27,7 @@ export default function Footer() {
                     <Twitter className="w-5 h-5" />
                 </a>
                 <a
-                    href="https://linkedin.com/in/ramadita"
+                    href="https://www.linkedin.com/in/rama-dita-486a6b249/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-muted-foreground hover:text-primary transition-colors"
