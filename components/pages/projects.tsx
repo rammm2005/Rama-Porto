@@ -169,7 +169,7 @@ const projects = [
         demo: "#",
     },
     {
-        "title": "Kiddygoo — Real-time Child Monitoring & Cyberbullying Prevention",
+        "title": "Kiddygoo Real-time Child Monitoring & Cyberbullying Prevention",
         "description": "Kiddygoo is a secure, real-time child monitoring and cyberbullying prevention web application built with Next.js, Supabase, and Vercel. It allows parents to track their children's locations, manage safe zones, and detect potential online bullying behavior with a modern and intuitive interface.",
         "tags": ["Next.js", "Supabase", "Cybersecurity", "Child Safety", "Realtime App"],
         "image": "/web-app/dashboard-kiddy-1.jpg?v=1",
