@@ -169,16 +169,15 @@ const projects = [
         demo: "#",
     },
     {
-        "title": "3DES Encryption Decryption Algorithm with Python and Telegram Bot",
-        "description": "A secure Python-based implementation of the Triple DES (3DES) encryption and decryption algorithm integrated with a Telegram bot. This tool allows users to encrypt and decrypt messages directly via Telegram, demonstrating cryptographic best practices and secure communication.",
-        "tags": ["Python", "TelegramBotAPI", "Encryption", "Cybersecurity"],
-        "image": "/mobile-app/3des.png?v=1",
+        "title": "Kiddygoo — Real-time Child Monitoring & Cyberbullying Prevention",
+        "description": "Kiddygoo is a secure, real-time child monitoring and cyberbullying prevention web application built with Next.js, Supabase, and Vercel. It allows parents to track their children's locations, manage safe zones, and detect potential online bullying behavior with a modern and intuitive interface.",
+        "tags": ["Next.js", "Supabase", "Cybersecurity", "Child Safety", "Realtime App"],
+        "image": "/web-app/dashboard-kiddy-1.jpg?v=1",
         "status": "publish",
-        "github": "https://github.com/rammm2005/keamanan-informasi",
-        "source_code": true,
+        "source_code": false,
         "demo_url": true,
-        "category": "Security Tool",
-        "demo": "https://t.me/threedesc_bot"
+        "category": "Child Safety Platform",
+        "demo": "https://kiddygoo.my.id/"
     }
 ]
 
@@ -217,7 +216,7 @@ export function Projects() {
                                             {project.category}
                                         </Badge>
                                     </div>
-                      
+
                                     {/* Status badge */}
                                     <div className="absolute top-4 right-4">
                                         <Badge

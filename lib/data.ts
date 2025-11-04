@@ -418,7 +418,55 @@ export const projects: Project[] = [
             "Demonstrated real-world use of Telegram Bot API for secure utilities",
             "Improved awareness on secure message exchange"
         ]
+    },
+    {
+        slug: "kiddygoo-realtime-child-monitoring-cyberbullying-prevention",
+        title: "Kiddygoo — Real-time Child Monitoring & Cyberbullying Prevention",
+        description: "A modern web app for real-time child monitoring and cyberbullying prevention, built with Next.js, Supabase, and Vercel.",
+        longDescription: "Kiddygoo is a secure, real-time web platform designed to help parents monitor their children's safety both offline and online. Built with Next.js, Supabase, and Vercel, Kiddygoo allows parents to track live locations, set safe zones, and detect early signs of cyberbullying through AI-driven analysis. The system integrates modern UI, optimized performance, and strong data protection using Supabase RLS.",
+        tags: ["Next.js", "Supabase", "Realtime", "Cybersecurity", "Child Safety"],
+        image: "/web-app/dashboard-kiddy-1.jpg",
+        images: ["/web-app/dashboard-kiddy-1.jpg", "/web-app/location-kiddy.jpg", "/web-app/landing-kiddy.jpg", "/web-app/chat-app.jpg", "/web-app/stats-kiddy.jpg"],
+        github: "#",
+        demo: "https://kiddygoo.my.id/",
+        status: "publish",
+        sourceCode: false,
+        demoUrl: true,
+        category: "Child Safety Platform",
+        client: "Personal Project",
+        duration: "2 months",
+        teamSize: "1 person",
+        role: "Full-Stack Developer",
+        challenges: [
+            "Implementing real-time location updates with Supabase Realtime",
+            "Ensuring secure RLS-based data separation per user",
+            "Designing clean and scalable architecture with modular components"
+        ],
+        solutions: [
+            "Optimized Next.js server components and client-side streaming",
+            "Applied Supabase Row-Level Security for data isolation",
+            "Used Shadcn UI and Tailwind for modular UI consistency"
+        ],
+        features: [
+            "Real-time child location tracking",
+            "Safe zone alerts and geofencing",
+            "Cyberbullying detection with AI analysis",
+            "Parent dashboard with data visualization",
+            "Integrated chatbot assistant"
+        ],
+        techDetails: {
+            frontend: ["Next.js", "Tailwind CSS", "Shadcn UI", "React Hooks"],
+            backend: ["Supabase Auth", "Supabase Realtime", "Edge Functions"],
+            database: ["PostgreSQL (Supabase)"],
+            tools: ["Vercel", "GitHub", "Figma", "ESLint", "TypeScript"]
+        },
+        outcomes: [
+            "Developed a secure and scalable child safety monitoring system",
+            "Enhanced awareness about online child safety and bullying prevention",
+            "Demonstrated clean code architecture with real-time web technology"
+        ]
     }
+
 
 ]
 
