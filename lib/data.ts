@@ -434,9 +434,9 @@ export const projects: Project[] = [
         demoUrl: true,
         category: "Child Safety Platform",
         client: "Personal Project",
-        duration: "2 months",
-        teamSize: "1 person",
-        role: "Full-Stack Developer",
+        duration: "1 months",
+        teamSize: "3 person",
+        role: "Full-Stack Developer & Project Manager",
         challenges: [
             "Implementing real-time location updates with Supabase Realtime",
             "Ensuring secure RLS-based data separation per user",
